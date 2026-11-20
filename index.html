@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Two Years ❤️</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+  body{background:#ffe6ee;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .card{background:white;width:100%;max-width:420px;padding:30px 22px;border-radius:25px;text-align:center;box-shadow:0 15px 40px rgba(0,0,0,0.15)}
+  .hidden{display:none}
+  h1{font-size:28px;color:#e91e63;margin-bottom:10px}
+  p{color:#555;font-size:17px;line-height:1.6;margin-bottom:20px}
+  .big{font-size:60px;margin-bottom:10px}
+  button{border:none;cursor:pointer;padding:14px 28px;border-radius:50px;font-size:17px;font-weight:bold;margin:6px}
+  .yes{background:#e91e63;color:white}
+  .no{background:#eee;color:#333}
+  .next{background:#ff4081;color:white;width:100%}
+  .heart{font-size:80px;animation:beat 1s infinite}
+  @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="card" id="page1">
+  <div class="big">💌</div>
+  <h1>Hi Palwasha!</h1>
+  <p>2 Saal ho gaye hamari dosti ko.<br>Ye chota sa surprise tumhare liye hai.</p>
+  <button class="next" onclick="showPage(2)">Open Our Two Years ❤️</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="card hidden" id="page2">
+  <div class="big">🥺</div>
+  <h1>Ek Sawal Hai...</h1>
+  <p>Kya tum meri best wali Jawn ho?</p>
+  <button class="yes" onclick="showPage(3)">Haan ❤️</button>
+  <button class="no" onclick="moveNo(this)">Nahi 😢</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="card hidden" id="page3">
+  <div class="heart">❤️</div>
+  <h1>I Knew It!</h1>
+  <p>2 saal se tum meri favourite person ho Palwasha, aur aage bhi rahogi.</p>
+  <button class="next" onclick="showPage(4)">Aage Dekho 👉</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="card hidden" id="page4">
+  <div class="big">🌹</div>
+  <h1>Happy 2 Years</h1>
+  <p>Ye page hamesha rahega, jaise ye 2 saal ki yaadein.<br><br><b>- Tumhara Dost</b></p>
+  <button class="next" onclick="showPage(1)">Dobara Dekho 🔁</button>
+</div>
+
+<script>
+function showPage(n){
+  document.getElementById('page1').classList.add('hidden');
+  document.getElementById('page2').classList.add('hidden');
+  document.getElementById('page3').classList.add('hidden');
+  document.getElementById('page4').classList.add('hidden');
+  document.getElementById('page'+n).classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function moveNo(btn){
+  btn.style.position='absolute';
+  btn.style.left=Math.random()*200+'px';
+  btn.style.top=Math.random()*300+'px';
+  alert('Nahi nahi chalega 😂 Haan dabao!');
+}
+</script>
+</body>
+</html>
